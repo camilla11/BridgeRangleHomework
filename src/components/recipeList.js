@@ -3,12 +3,16 @@ import RecipeItem from './recipeItem'
 
 export default function RecipeList({
   recipes,
+  filter,
 }){
   return (
     <div>
-    {recipes.map((recipe,index) => <RecipeItem key={index}
+    {recipes.filter(
+      (recipe) => recipe.title.includes(filter) ||
+      filter==""
+    ).map((recipe,index) => <RecipeItem key={index}
       title={recipe.title} url={recipe.href}
-       ingredients = {recipe.ingredients} />) }
+       ingredients = {recipe.ingredients} />)}
     </div>
   )
 }
