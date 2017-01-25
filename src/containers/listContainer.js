@@ -19,7 +19,6 @@ export default class RecipeListContainer extends Component{
 
   handleChange(event) {
     this.setState({ingredientSearch: event.target.value});
-    this.forceUpdate();
   }
 
 

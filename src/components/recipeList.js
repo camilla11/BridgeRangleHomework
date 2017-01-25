@@ -8,11 +8,11 @@ export default function RecipeList({
   return (
     <div>
     {recipes.filter(
-      (recipe) => recipe.title.includes(filter) ||
-      filter==""
+      (recipe) => recipe.title.toLowerCase().includes(filter.toLowerCase()) ||
+      filter===""
     ).map((recipe,index) => <RecipeItem key={index}
       title={recipe.title} url={recipe.href}
-       ingredients = {recipe.ingredients} />)}
+       ingredients={recipe.ingredients} />)}
     </div>
   )
 }
